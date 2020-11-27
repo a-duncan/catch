@@ -23,7 +23,7 @@ There are two sets of alternate bindings:
 
 
 ## Objective
-There is currently no defined game objective. There is only a sandbox environment with many grabbable objects -- balls, rocks (grey cubes), and ice (blue cubes). Try some of the following:
+As of v0.0.1, there are no defined game objectives. There is only a sandbox environment with many grabbable objects -- balls, rocks (grey cubes), and ice (blue cubes). Try some of the following:
 - Throw a ball at a rock pile! 
 - Grab a rock pile and carry it around the map! Throw it at the ice wall! 
 - Grab a big chunk of ice and launch the cubes in all directions!
