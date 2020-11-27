@@ -15,7 +15,7 @@ You are a flying saucer that grabs and throws objects.
 
 **Dive: Left Ctrl** - Hold in midair to boost downward.
 
-**Pause Menu: ESC** - Resume, reload, options, or quit. The options submenu has settings for mouse sensitivity and y-axis inversion.
+**Pause Menu: ESC** - Resume, reload, options, or quit. The options submenu has settings for mouse sensitivity and y-axis inversion. In v0.0.1, these settings unfortunately do not persist between game sessions.
 
 There are two sets of alternate bindings:
 - Numpad key bindings for left-handed mouse users. Up, down, left, right are 8, 2, 4, 6, and jump, sprint, dive are 0, +, enter respectively. Mouse settings are not changed.
@@ -28,3 +28,12 @@ There is currently no defined game objective. There is only a sandbox environmen
 - Grab a rock pile and carry it around the map! Throw it at the ice wall! 
 - Grab a big chunk of ice and launch the cubes in all directions!
 - Toss a ball straight up, then catch it before it hits the ground!
+
+## Things to come!
+In v0.0.2 I hope to add
+- Sound effects
+- New levels with actual objectives
+- Improved catching/throwing mechanics
+- Other stuff I'll think of later
+
+In v0.1 there will be real life cold fusion and faster-than-light travel. Or maybe just multiplayer, we'll have to wait and see.
