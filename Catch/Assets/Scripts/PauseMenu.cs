@@ -16,8 +16,8 @@ public class PauseMenu : MonoBehaviour
 
     public CinemachineFreeLook cinemachineFL;
 
-    public float xSensitivityMultiplier = 0.02f;
-    public float ySensitivityMultiplier = 0.00005f;
+    public float xSensitivityMultiplier = 0.002f;
+    public float ySensitivityMultiplier = 0.00001f;
 
 
     public void MenuBackout()
