@@ -6,6 +6,7 @@ TagManager:
   tags:
   - envir
   - Ball
+  - Hail
   layers:
   - Default
   - TransparentFX
