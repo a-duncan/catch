@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using MarchingBytes;
 
 public class LavaBurn : MonoBehaviour
@@ -9,10 +10,10 @@ public class LavaBurn : MonoBehaviour
     {
         GameObject otherGO = other.gameObject;
 
-        //if (otherGO.tag == "Player")
-        //{
-        //    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        //}
+        if (otherGO.tag == "Player")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
 
         if (otherGO.layer == LayerMask.NameToLayer("Objects"))
         {

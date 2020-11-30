@@ -15451,8 +15451,8 @@ GameObject:
   - component: {fileID: 8991541563899395258}
   - component: {fileID: 8991541563899395263}
   m_Layer: 10
-  m_Name: Player
-  m_TagString: Untagged
+  m_Name: PlayerMesh
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15545,7 +15545,7 @@ GameObject:
   - component: {fileID: 8991541564237761297}
   - component: {fileID: 8991541564237761296}
   m_Layer: 10
-  m_Name: Third Person Player
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
