@@ -15,6 +15,8 @@ public class ThirdPersonMovement : MonoBehaviour
     public GameObject jumpEffects;
     public GameObject diveEffects;
 
+    public BoostBar boostBar;
+
     public float moveForce = 400f;
     public float boostForce = 1000f;
     public float jumpImpulse = 70f;
@@ -35,6 +37,7 @@ public class ThirdPersonMovement : MonoBehaviour
     private void Start()
     {
         boost = maxBoost;
+        boostBar.SetMaxBoost(maxBoost);
         
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -102,6 +105,8 @@ public class ThirdPersonMovement : MonoBehaviour
             OnJumpCancel();
             OnDiveCancel();
         }
+
+        boostBar.SetBoost(boost);
     }
 
     public void OnMoveInput(float horizontal, float vertical)
