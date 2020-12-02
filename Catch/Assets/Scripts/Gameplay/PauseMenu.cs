@@ -25,6 +25,8 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
+        pauseState = PauseState.Unpaused;
+
         float sensitivity = PlayerPrefs.GetFloat("XSensitivity", 50f);
         xSensitivitySlider.value = sensitivity;
         cinemachineFL.m_XAxis.m_MaxSpeed = sensitivity * xSensitivityMultiplier;
