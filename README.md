@@ -31,7 +31,7 @@ As of v0.0.2, there are two levels (and a main menu).
 - Grab a big chunk of ice and launch the cubes in all directions!
 - Toss a ball straight up, then catch it before it hits the ground!
 
-2. Lava Hailstorm: try to take the ball up to the top of the tallest pillar!
+2. Lava Hailstorm: try to take the ball up to the top of the tallest pillar! Hail might get you down but you can always get the ball and try again. The ball is fire-proof, but you are not! Don't get too close to the lava!
 
 
 ## Things to come!
