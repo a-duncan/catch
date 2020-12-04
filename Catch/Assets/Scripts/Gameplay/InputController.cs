@@ -9,26 +9,23 @@ using UnityEngine.InputSystem;
 [Serializable]
 public class MoveInputEvent : UnityEvent<float, float> { }
 
-[Serializable]
-public class ButtonInputEvent : UnityEvent { }
-
 
 public class InputController : MonoBehaviour
 {
     public MoveInputEvent moveInputEvent;
-    public ButtonInputEvent jumpStartEvent;
-    public ButtonInputEvent jumpCancelEvent;
-    public ButtonInputEvent boostStartEvent;
-    public ButtonInputEvent boostCancelEvent;
-    public ButtonInputEvent diveStartEvent;
-    public ButtonInputEvent diveCancelEvent;
-    public ButtonInputEvent grabStartEvent;
-    public ButtonInputEvent grabCancelEvent;
-    public ButtonInputEvent throwStartEvent;
+    public UnityEvent jumpStartEvent;
+    public UnityEvent jumpCancelEvent;
+    public UnityEvent boostStartEvent;
+    public UnityEvent boostCancelEvent;
+    public UnityEvent diveStartEvent;
+    public UnityEvent diveCancelEvent;
+    public UnityEvent grabStartEvent;
+    public UnityEvent grabCancelEvent;
+    public UnityEvent throwStartEvent;
 
-    public ButtonInputEvent togglePauseEvent;
-    public ButtonInputEvent reloadSceneEvent;
-    public ButtonInputEvent toggleInvertLookEvent;
+    public UnityEvent togglePauseEvent;
+    public UnityEvent reloadSceneEvent;
+    public UnityEvent toggleInvertLookEvent;
 
     Controls controls;
 
