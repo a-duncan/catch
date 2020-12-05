@@ -24,6 +24,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public float diveForce = 300f;
     public float maxBoost = 3f;
     public float rechargeRate = 0.5f;
+    public float groundRechargeRate = 1f;
 
     float horizontal;
     float vertical;
@@ -95,7 +96,11 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (!boostUsed)
         {
-            boost += Time.deltaTime * rechargeRate;
+            if (isGrounded)
+                boost += Time.deltaTime * groundRechargeRate;
+            else
+                boost += Time.deltaTime * rechargeRate;
+            
             boost = Mathf.Min(boost, maxBoost);
         }
         
