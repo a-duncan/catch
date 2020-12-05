@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class BasketEvents : MonoBehaviour
 {
-    public UnityEvent playerEvent;
-    public UnityEvent ballEvent;
+    public UnityEvent playerInBasket;
+    public UnityEvent ballInBasket;
 
 
     private void OnTriggerEnter(Collider other)
@@ -14,10 +14,10 @@ public class BasketEvents : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Player":
-                playerEvent.Invoke();
+                playerInBasket.Invoke();
                 break;
             case "Ball":
-                ballEvent.Invoke();
+                ballInBasket.Invoke();
                 break;
             default:
                 break;
