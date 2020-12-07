@@ -28,10 +28,10 @@ As of v0.0.3, there are three levels (and a main menu).
 1. **Sandbox** 
 
 An environment with no defined game objectives, but many grabbable objects -- balls, rocks (grey cubes), and ice (blue cubes). Try some of the following:
-    - Throw a ball at a rock pile! 
-    - Grab a rock pile and carry it around the map! Throw it at the ice wall! 
-    - Grab a big chunk of ice and launch the cubes in all directions!
-    - Toss a ball straight up, then catch it before it hits the ground!
+  - Throw a ball at a rock pile! 
+  - Grab a rock pile and carry it around the map! Throw it at the ice wall! 
+  - Grab a big chunk of ice and launch the cubes in all directions!
+  - Toss a ball straight up, then catch it before it hits the ground!
 
 2. **Lava Hailstorm**
 
