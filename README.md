@@ -23,22 +23,40 @@ There are two sets of alternate bindings:
 
 
 ## Levels
-As of v0.0.2, there are two levels (and a main menu).
+As of v0.0.3, there are three levels (and a main menu).
 
-1. Sandbox: an environment with no defined game objectives, but many grabbable objects -- balls, rocks (grey cubes), and ice (blue cubes). Try some of the following:
-- Throw a ball at a rock pile! 
-- Grab a rock pile and carry it around the map! Throw it at the ice wall! 
-- Grab a big chunk of ice and launch the cubes in all directions!
-- Toss a ball straight up, then catch it before it hits the ground!
+1. **Sandbox** 
 
-2. Lava Hailstorm: try to take the ball up to the top of the tallest pillar! Hail might get you down but you can always get the ball and try again. The ball is fire-proof, but you are not! Don't get too close to the lava!
+An environment with no defined game objectives, but many grabbable objects -- balls, rocks (grey cubes), and ice (blue cubes). Try some of the following:
+    - Throw a ball at a rock pile! 
+    - Grab a rock pile and carry it around the map! Throw it at the ice wall! 
+    - Grab a big chunk of ice and launch the cubes in all directions!
+    - Toss a ball straight up, then catch it before it hits the ground!
+
+2. **Lava Hailstorm**
+
+Take the ball up to the top of the tallest pillar to win! Hail might get you down but you can always get the ball and try again. The ball is fire-proof, but you are not! Don't get too close to the lava!
+
+3. **Space Pong**
+
+Ten huge cups float in space. You are on a floating platform with a ball. Try to get the ball in the cups and don't fall. Hit or miss, the ball comes back. Get all ten cups to win!
+
+
+## v0.0.3 release notes
+- New level: Space Pong! Get all ten cups!
+- Sound! There is one sound effect which occurs when the ball bounces. Thwump!
+- Boost now charges faster if you're grounded.
+- Changes to LavaHailstorm:
+    - Hail spawns with random movement and spin for a more chaotic storm.
+    - There is a win screen when you reach the top.
+- Misc minor bug fixes.
 
 
 ## Things to come!
-In v0.0.3 I hope to add
-- Sound effects
-- More levels with actual objectives
+Possible additions in v0.0.4 or other near future releases:
 - Improved catching/throwing mechanics
+- More sounds
+- More levels
 - Other stuff I'll think of later
 
 In v0.1 there will be real life cold fusion and faster-than-light travel. Or maybe just multiplayer, we'll have to wait and see.
