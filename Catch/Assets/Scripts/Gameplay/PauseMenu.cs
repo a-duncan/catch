@@ -7,13 +7,14 @@ using Cinemachine;
 
 public class PauseMenu : MonoBehaviour
 {
-    public enum PauseState {Unpaused, PauseMenu, OptionsMenu}
+    public enum PauseState {Unpaused, PauseMenu, OptionsMenu, OtherPause}
 
     public static PauseState pauseState = PauseState.Unpaused;
 
 
     public GameObject pauseMenuUI;
     public GameObject optionsMenuUI;
+    public GameObject winScreenUI;
     public Slider xSensitivitySlider;
     public Slider ySensitivitySlider;
     public Toggle yInvertToggle;
@@ -88,6 +89,14 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         pauseState = PauseState.PauseMenu;
+    }
+
+    public void WinScreen()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        winScreenUI.SetActive(true);
+        Time.timeScale = 0f;
+        pauseState = PauseState.OtherPause;
     }
 
     public void ReloadScene()
