@@ -39,7 +39,7 @@ Take the ball up to the top of the tallest pillar to win! Hail might get you dow
 
 3. **Space Pong**
 
-Ten huge cups float in space. You are on a floating platform with a ball. Try to get the ball in the cups and don't fall. Hit or miss, the ball comes back. Get all ten cups to win!
+Ten huge cups float in space. You are on a floating platform with a ball. Try to get the ball in the cups and don't fall. The ball comes back whether you hit or miss. Get all ten cups to win!
 
 
 ## v0.0.3 release notes
