@@ -47,4 +47,7 @@ MonoBehaviour:
   objectToSpawn: {fileID: 9165829872527819203, guid: b39c5dee137bed14b9c8177fe5a31989,
     type: 3}
   timeInterval: 0.5
-  spawnPosJitter: {x: 10, y: 10, z: 10}
+  spawnPosJitter: {x: 10, y: 20, z: 10}
+  spawnVelocity: {x: 0, y: 0, z: 0}
+  spawnVelJitter: {x: 5, y: 5, z: 5}
+  maxSpin: 6.28
