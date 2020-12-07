@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine.Events;
 using UnityEngine;
 
-public class BasketEvents : MonoBehaviour
+public class PlayerAndBallTriggerEvents : MonoBehaviour
 {
-    public UnityEvent playerInBasket;
-    public UnityEvent ballInBasket;
+    public UnityEvent playerEvent;
+    public UnityEvent ballEvent;
 
 
     private void OnTriggerEnter(Collider other)
@@ -14,10 +14,10 @@ public class BasketEvents : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Player":
-                playerInBasket.Invoke();
+                playerEvent.Invoke();
                 break;
             case "Ball":
-                ballInBasket.Invoke();
+                ballEvent.Invoke();
                 break;
             default:
                 break;
