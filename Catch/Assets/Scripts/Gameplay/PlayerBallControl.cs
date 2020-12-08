@@ -48,8 +48,8 @@ public class PlayerBallControl : MonoBehaviour
                 {
                     grabbedRBs[i].AddForce(-grabDamping * grabbedRBs[i].velocity);
 
-                    float explForce = grabStrength * holdDistance / holdRadius;
-                    grabbedRBs[i].AddExplosionForce(-explForce, grabPosition, 0f);
+                    float holdForce = grabStrength * holdDistance / holdRadius;
+                    grabbedRBs[i].AddExplosionForce(-holdForce, grabPosition, 0f);
                 }
             }
 
