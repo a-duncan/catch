@@ -13,8 +13,10 @@ public class PlayerBallControl : MonoBehaviour
 
     public LayerMask grabLayer;
     public GameObject grabberGraphics;
-    public float grabRadius = 10;
-    public float holdRadius = 10;
+    public float grabRadius = 5f;
+    public float grabCapsuleInnerLen = 10;
+    public float holdRadius = 5f;
+
     public float grabStrength = 2000f;
     public float grabDamping = 20f;
 
@@ -53,6 +55,7 @@ public class PlayerBallControl : MonoBehaviour
                 }
             }
 
+            ungrabbedIndices.Reverse();
             foreach (int i in ungrabbedIndices)
             {
                 grabbedRBs.RemoveAt(i);
@@ -85,7 +88,11 @@ public class PlayerBallControl : MonoBehaviour
     {
         grabberGraphics.SetActive(true);
 
-        Collider[] grabColliders = Physics.OverlapSphere(transform.position, grabRadius, grabLayer);
+        Quaternion camRotate = Camera.main.transform.rotation;
+        Vector3 forwardCapsulePoint = grabCapsuleInnerLen * Vector3.forward;
+        forwardCapsulePoint = playerRB.position + camRotate * forwardCapsulePoint;
+
+        Collider[] grabColliders = Physics.OverlapCapsule(playerRB.position, forwardCapsulePoint, grabRadius, grabLayer);
 
         if (grabColliders.Length > 0)
         {
@@ -95,7 +102,7 @@ public class PlayerBallControl : MonoBehaviour
             grabbedRBs = new List<Rigidbody>();
             grabbedOffsets = new List<Vector3>();
 
-            Quaternion camUnrotate = Quaternion.Inverse(Camera.main.transform.rotation);
+            Quaternion camUnrotate = Quaternion.Inverse(camRotate);
 
             foreach (Collider grabCollider in grabColliders)
             {
@@ -122,11 +129,13 @@ public class PlayerBallControl : MonoBehaviour
             isGrabbing = false;
             foreach (Rigidbody grabbedRB in grabbedRBs)
             {
-                float holdDistance = (grabbedRB.position - playerRB.position).magnitude;
-                if (holdDistance < holdRadius)
+                float grabDistance = (grabbedRB.position - playerRB.position).magnitude;
+                float maxDistance = grabCapsuleInnerLen + grabRadius;
+
+                if (grabDistance < maxDistance)
                 {
                     Vector3 throwForce = (grabbedRB.position - throwCenter.position).normalized;
-                    throwForce *= throwBaseImpulse * (1 - holdDistance / holdRadius);
+                    throwForce *= throwBaseImpulse * (1 - grabDistance / maxDistance);
                     grabbedRB.AddForce(throwForce, ForceMode.Impulse);
                 }
             }

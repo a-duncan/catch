@@ -5207,6 +5207,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4756252294803658258}
+  - {fileID: 839759935811390989}
   m_Father: {fileID: 4776821907625740803}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9964,6 +9965,100 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1 &3237815234468865446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 839759935811390989}
+  - component: {fileID: 765958813037137884}
+  - component: {fileID: 4888255260834445523}
+  - component: {fileID: 4215710529544554631}
+  m_Layer: 0
+  m_Name: CapsuleGrabFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &839759935811390989
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3237815234468865446}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_Children: []
+  m_Father: {fileID: 6380255278260397711}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!33 &765958813037137884
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3237815234468865446}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &4888255260834445523
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3237815234468865446}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 4e58d0d41934e5b4c8448380a191d1af, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!136 &4215710529544554631
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3237815234468865446}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3351757952333144584
 GameObject:
   m_ObjectHideFlags: 0
@@ -15358,7 +15453,7 @@ GameObject:
   - component: {fileID: 8991541563023342615}
   - component: {fileID: 8991541563023342608}
   m_Layer: 10
-  m_Name: BallGrabFX
+  m_Name: SphereGrabFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15610,6 +15705,7 @@ MonoBehaviour:
   boostEffects: {fileID: 3351757952333144584}
   jumpEffects: {fileID: 46754174893847730}
   diveEffects: {fileID: 2823521643041784142}
+  boostBar: {fileID: 0}
   moveForce: 400
   boostForce: 1000
   jumpImpulse: 70
@@ -15617,6 +15713,7 @@ MonoBehaviour:
   diveForce: 300
   maxBoost: 3
   rechargeRate: 0.5
+  groundRechargeRate: 1
 --- !u!114 &8991541564237761296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15636,12 +15733,13 @@ MonoBehaviour:
   grabLayer:
     serializedVersion: 2
     m_Bits: 2560
-  grabberGraphics: {fileID: 8991541563023342610}
+  grabberGraphics: {fileID: 3237815234468865446}
   grabRadius: 5
+  grabCapsuleInnerLen: 10
   holdRadius: 5
   grabStrength: 2000
   grabDamping: 20
-  throwBaseImpulse: 300
+  throwBaseImpulse: 200
 --- !u!1 &8991541564572911719
 GameObject:
   m_ObjectHideFlags: 0
