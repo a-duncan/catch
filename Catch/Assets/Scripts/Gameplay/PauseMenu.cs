@@ -11,22 +11,38 @@ public class PauseMenu : MonoBehaviour
 
     public static PauseState pauseState = PauseState.Unpaused;
 
+    public LevelLoader levelLoader;
+
 
     public GameObject pauseMenuUI;
+    
     public GameObject optionsMenuUI;
-    public GameObject winScreenUI;
     public Slider xSensitivitySlider;
     public Slider ySensitivitySlider;
     public Toggle yInvertToggle;
-
     public CinemachineFreeLook cinemachineFL;
-
     public float xSensitivityMultiplier = 0.002f;
     public float ySensitivityMultiplier = 0.00001f;
+
+    public GameObject winScreenUI;
+    public float winCooldown = 5f;
+
+
+    Animator pauseFade;
+    Animator winScreenFade;
+
+    float winCooldownRemaining;
+
 
     private void Start()
     {
         pauseState = PauseState.Unpaused;
+
+
+        pauseFade = pauseMenuUI.GetComponent<Animator>();
+        winScreenFade = winScreenUI.GetComponent<Animator>();
+        winCooldownRemaining = 0f;
+
 
         float sensitivity = PlayerPrefs.GetFloat("XSensitivity", 50f);
         xSensitivitySlider.value = sensitivity;
@@ -39,6 +55,12 @@ public class PauseMenu : MonoBehaviour
         bool invert = (PlayerPrefs.GetInt("YInvert", 0) != 0);
         yInvertToggle.isOn = invert;
         cinemachineFL.m_YAxis.m_InvertInput = !invert;
+    }
+
+    private void Update()
+    {
+        if (winCooldownRemaining > 0)
+            winCooldownRemaining -= Time.deltaTime;
     }
 
 
@@ -78,6 +100,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        pauseFade.SetTrigger("Resume");
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         pauseState = PauseState.Unpaused;
@@ -87,28 +110,34 @@ public class PauseMenu : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         pauseMenuUI.SetActive(true);
+        pauseFade.SetTrigger("Pause");
         Time.timeScale = 0f;
         pauseState = PauseState.PauseMenu;
     }
 
     public void WinScreen()
     {
-        Cursor.lockState = CursorLockMode.None;
-        winScreenUI.SetActive(true);
-        Time.timeScale = 0f;
-        pauseState = PauseState.OtherPause;
+        if (winCooldownRemaining <= 0)
+        {
+            winCooldownRemaining = winCooldown;
+            Cursor.lockState = CursorLockMode.None;
+            winScreenUI.SetActive(true);
+            winScreenFade.SetTrigger("Pause");
+            Time.timeScale = 0f;
+            pauseState = PauseState.OtherPause;
+        }
     }
 
     public void ReloadScene()
     {
         Resume();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        levelLoader.LoadLevel(SceneManager.GetActiveScene().name);
     }
 
     public void LoadMainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        levelLoader.LoadLevel("MainMenu");
     }
 
     public void QuitGame()

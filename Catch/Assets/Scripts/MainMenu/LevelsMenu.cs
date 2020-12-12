@@ -5,18 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class LevelsMenu : MonoBehaviour
 {
+    public LevelLoader levelLoader;
+
     public void PlaySandbox()
     {
-        SceneManager.LoadScene("SandboxScene");
+        levelLoader.LoadLevel("SandboxScene");
     }
 
     public void PlayLavaHailstorm()
     {
-        SceneManager.LoadScene("LavaHailstorm");
+        levelLoader.LoadLevel("LavaHailstorm");
     }
 
     public void PlaySpacePong()
     {
-        SceneManager.LoadScene("SpacePong");
+        levelLoader.LoadLevel("SpacePong");
     }
 }
