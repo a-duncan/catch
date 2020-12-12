@@ -17,12 +17,16 @@ public class PlayerBallControl : MonoBehaviour
     public float grabCapsuleInnerLen = 10;
     public float holdRadius = 5f;
 
-    public float grabStrength = 2000f;
+    public float grabStrength = 400f;
     public float grabDamping = 20f;
 
     public float throwBaseImpulse = 300f;
 
+    public float pullStrength = 400f;
+    public float releaseStrength = 100f;
+
     bool isGrabbing = false;
+    bool isPulling = false;
     List<Rigidbody> grabbedRBs;
     List<Vector3> grabbedOffsets;
 
@@ -34,15 +38,13 @@ public class PlayerBallControl : MonoBehaviour
         {
             Quaternion camRotate = Camera.main.transform.rotation;
 
-            int ct = grabbedRBs.Count;
-
             List<int> ungrabbedIndices = new List<int>();
-            for (int i = 0; i < ct; i++)
+            for (int i = 0; i < grabbedRBs.Count; i++)
             {
                 Vector3 grabPosition = playerRB.position + camRotate * grabbedOffsets[i];
                 float holdDistance = (grabPosition - grabbedRBs[i].position).magnitude;
-                
-                if (holdDistance > holdRadius)
+
+                if (holdDistance > holdRadius && !isPulling)
                 {
                     ungrabbedIndices.Add(i);
                 }
@@ -50,8 +52,15 @@ public class PlayerBallControl : MonoBehaviour
                 {
                     grabbedRBs[i].AddForce(-grabDamping * grabbedRBs[i].velocity);
 
-                    float holdForce = grabStrength * holdDistance / holdRadius;
+                    float holdForce = grabStrength * holdDistance;
                     grabbedRBs[i].AddExplosionForce(-holdForce, grabPosition, 0f);
+                }
+
+                if (isPulling)
+                {
+                    float pullForce = (grabbedRBs[i].position - throwCenter.position).magnitude;
+                    pullForce *= pullStrength;
+                    grabbedRBs[i].AddExplosionForce(-pullForce, throwCenter.position, 0f);
                 }
             }
 
@@ -80,7 +89,7 @@ public class PlayerBallControl : MonoBehaviour
 
             ballRB.AddExplosionForce(hitImpulse, transform.position, 0f, 0f, ForceMode.Impulse);
         }
-        
+
     }
 
 
@@ -143,5 +152,26 @@ public class PlayerBallControl : MonoBehaviour
 
     }
 
+    public void StartPulling()
+    {
+        isPulling = true;
+    }
 
+    public void ReleasePulling()
+    {
+        if (isGrabbing)
+        {
+            isGrabbing = false;
+            isPulling = false;
+
+            Quaternion camRotate = Camera.main.transform.rotation;
+            for (int i = 0; i < grabbedRBs.Count; i++)
+            {
+                Vector3 grabPosition = playerRB.position + camRotate * grabbedOffsets[i];
+                Vector3 throwForce = releaseStrength * (grabPosition - grabbedRBs[i].position);
+
+                grabbedRBs[i].AddForce(throwForce, ForceMode.Impulse);
+            }
+        }
+    }
 }

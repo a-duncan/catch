@@ -22,6 +22,7 @@ public class InputController : MonoBehaviour
     public UnityEvent grabStartEvent;
     public UnityEvent grabCancelEvent;
     public UnityEvent throwStartEvent;
+    public UnityEvent throwCancelEvent;
 
     public UnityEvent togglePauseEvent;
     public UnityEvent reloadSceneEvent;
@@ -55,6 +56,7 @@ public class InputController : MonoBehaviour
         controls.Gameplay.Grab.canceled += OnGrabCanceled;
 
         controls.Gameplay.Throw.started += OnThrowStarted;
+        controls.Gameplay.Throw.canceled += OnThrowCanceled;
 
         // ***** OTHER INPUTS *****
         controls.Gameplay.Pause.started += OnPause;
@@ -109,6 +111,12 @@ public class InputController : MonoBehaviour
     {
         throwStartEvent.Invoke();
     }
+
+    private void OnThrowCanceled(InputAction.CallbackContext obj)
+    {
+        throwCancelEvent.Invoke();
+    }
+
 
     private void OnReloadStarted(InputAction.CallbackContext context)
     {

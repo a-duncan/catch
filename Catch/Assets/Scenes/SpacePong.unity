@@ -5844,6 +5844,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -9.884863e-10
       objectReference: {fileID: 0}
+    - target: {fileID: 8689327305487712816, guid: 33d71a34ddfbff94a83a6e340c96ab5f,
+        type: 3}
+      propertyPath: grabStrength
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 8689327305487712817, guid: 33d71a34ddfbff94a83a6e340c96ab5f,
         type: 3}
       propertyPath: maxBoost
