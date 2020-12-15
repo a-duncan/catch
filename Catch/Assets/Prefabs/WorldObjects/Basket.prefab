@@ -8264,7 +8264,7 @@ GameObject:
   - component: {fileID: 3058946896138854075}
   - component: {fileID: 6727972491203165385}
   - component: {fileID: 3096749004965943602}
-  - component: {fileID: 4169580694681649195}
+  - component: {fileID: 4663657718397398008}
   m_Layer: 0
   m_Name: BasketTrigger
   m_TagString: Untagged
@@ -12902,7 +12902,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &4169580694681649195
+--- !u!114 &4663657718397398008
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12911,23 +12911,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8785771154491527410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7834c50adb9c46d47a2df0aacb5d337c, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d56ff288403afc479cf303d6cf35f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  ballEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7936811458295549606}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  levelManager: {fileID: 0}
+  basketFX: {fileID: 5783824534835039893, guid: f0b4d19effdb0bf489b3a9887a000d71,
+    type: 3}
+  basketGO: {fileID: 7936811458295549606}
