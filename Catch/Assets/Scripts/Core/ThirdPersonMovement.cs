@@ -19,6 +19,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public float moveForce = 400f;
     public float boostForce = 1000f;
+    public float hVelDragCoef = 20f;
     public float jumpImpulse = 70f;
     public float jumpForce = 300f;
     public float diveForce = 300f;
@@ -79,6 +80,12 @@ public class ThirdPersonMovement : MonoBehaviour
         }
 
         playerRB.AddForce(moveDirection);
+
+        //Vector3 hVel = new Vector3(playerRB.velocity.x, 0f, playerRB.velocity.z);
+        Vector3 hVel = playerRB.velocity;
+        hVel.y = 0;
+        playerRB.AddForce(-hVelDragCoef * hVel);
+
 
         if (isJumping)
         {

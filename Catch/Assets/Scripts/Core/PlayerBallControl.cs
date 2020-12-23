@@ -17,7 +17,7 @@ public class PlayerBallControl : MonoBehaviour
     public float grabCapsuleInnerLen = 10;
     public float holdRadius = 5f;
 
-    public float grabStrength = 400f;
+    public float grabStrength = 2000f;
     public float grabDamping = 20f;
 
     public float throwBaseImpulse = 300f;

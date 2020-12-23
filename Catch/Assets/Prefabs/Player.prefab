@@ -15967,7 +15967,7 @@ Rigidbody:
   m_GameObject: {fileID: 8991541564237761292}
   serializedVersion: 2
   m_Mass: 10
-  m_Drag: 2
+  m_Drag: 0.2
   m_AngularDrag: 0.1
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -15999,8 +15999,9 @@ MonoBehaviour:
   boostBar: {fileID: 0}
   moveForce: 400
   boostForce: 1000
+  hVelDragCoef: 20
   jumpImpulse: 70
-  jumpForce: 300
+  jumpForce: 200
   diveForce: 300
   maxBoost: 3
   rechargeRate: 0.5
