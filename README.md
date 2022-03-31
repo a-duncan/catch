@@ -23,7 +23,7 @@ There are two sets of alternate bindings:
 
 
 ## Levels
-As of v0.0.3, there are three levels (and a main menu).
+As of v0.0.3.1, there are three levels (and a main menu).
 
 1. **Sandbox** 
 
@@ -32,6 +32,7 @@ An environment with no defined game objectives, but many grabbable objects -- ba
   - Grab a rock pile and carry it around the map! Throw it at the ice wall! 
   - Grab a big chunk of ice and launch the cubes in all directions!
   - Toss a ball straight up, then catch it before it hits the ground!
+  - Toss a ball into the ball catcher (glowy blue thing)
 
 2. **Lava Hailstorm**
 
@@ -41,6 +42,9 @@ Take the ball up to the top of the tallest pillar to win! Hail might get you dow
 
 Ten huge cups float in space. You are on a floating platform with a ball. Try to get the ball in the cups and don't fall. The ball comes back whether you hit or miss. Get all ten cups to win!
 
+## v0.0.3.1 release notes
+- Added sound/particle effects for Space Pong cups.
+- Added ball catcher to sandbox level.
 
 ## v0.0.3 release notes
 - New level: Space Pong! Get all ten cups!
