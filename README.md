@@ -43,8 +43,11 @@ Take the ball up to the top of the tallest pillar to win! Hail might get you dow
 Ten huge cups float in space. You are on a floating platform with a ball. Try to get the ball in the cups and don't fall. The ball comes back whether you hit or miss. Get all ten cups to win!
 
 ## v0.0.3.1 release notes
-- Added sound/particle effects for Space Pong cups.
-- Added ball catcher to sandbox level.
+- Space Pong now has a sound effect and a particle effect associated with hitting each cup, to celebrate your accomplishment!
+- Sandbox has a ball catcher object, which attracts nearby balls to its center.
+- Added boost sound effect.
+- Added scene transitions (fade in/out for pause menu and level changes).
+- Misc bug fixes and gameplay tweaks.
 
 ## v0.0.3 release notes
 - New level: Space Pong! Get all ten cups!
